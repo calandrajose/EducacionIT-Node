@@ -31,12 +31,46 @@ function urlRepo() {
 }
 
 /* 
-Crear una función arrow, que devuelva una clase en ES6 que contendrá dos métodos llamados contadorPalabras y hayNumeros. La clase recibirá un texto que se guardará en una propiedad llamada texto. contadorPalabras retornará la cantidad de palabras encontradas en la propiedad texto y hayNumeros devolverá true en caso de que encuentre un número en dicho texto, caso contrario retorna false. En ambos métodos, si el texto no es válido, se devolverá -1
+Crear una función arrow, que devuelva una clase en ES6 que contendrá dos métodos llamados contadorPalabras
+y hayNumeros. La clase recibirá un texto que se guardará en una propiedad llamada texto. contadorPalabras
+retornará la cantidad de palabras encontradas en la propiedad texto y hayNumeros devolverá true en caso
+de que encuentre un número en dicho texto, caso contrario retorna false. En ambos métodos,
+si el texto no es válido, se devolverá -1
 Crear un propiedad estática contadorInstancias que me indique cuantas instancias hay de esa clase.
 */
 const crearClase = () => {
-  return;
-};
+
+  return class Es6Class{
+    constructor(input){
+      this.texto = input;
+      Es6Class.contadorInstancias = (Es6Class.contadorInstancias || 0 ) +1
+     
+    }
+
+    // static contadorInstancias
+
+    contadorPalabras(){
+      if(typeof this.texto === 'string'){
+        return this.texto === '' ? 0 : this.texto.split(' ').length;
+      }else{
+        return -1;
+      }
+    }
+
+    hayNumeros(){
+      if(typeof this.texto === 'string'){
+        const arrayLetras = this.texto.split('');
+        for(let i = 0; i<arrayLetras.length; i++){
+            if(arrayLetras[i] > '0' && arrayLetras[i] < '9'){
+              return true;
+            }
+        }
+        return false
+      }else{
+      return -1
+    }
+  }
+}};
 
 module.exports = {
   contarVocales,
