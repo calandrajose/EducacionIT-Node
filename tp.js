@@ -18,14 +18,16 @@ function contarVocales(texto) {
   }
   return q;
 }
-
-console.log(contarVocales(2));
+// 
+// console.log(contarVocales(2));
 
 /* 
-Crear un repo en github y subir todo el proyecto. Se ignorará la carpeta node_modules (para ellos está creado el archivo .gitignore en este proyecto) Esta función devolverá un string con la url del repo.
+Crear un repo en github y subir todo el proyecto. 
+Se ignorará la carpeta node_modules (para ellos está creado el archivo .gitignore en este proyecto)
+Esta función devolverá un string con la url del repo.
 */
 function urlRepo() {
-  return;
+  return 'https://github.com/calandrajose/EducacionIT-Node.git';
 }
 
 /* 
