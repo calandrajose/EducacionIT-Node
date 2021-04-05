@@ -40,37 +40,35 @@ Crear un propiedad estática contadorInstancias que me indique cuantas instancia
 */
 const crearClase = () => {
 
-  return class Es6Class{
-    constructor(input){
+  return class Es6Class {
+    constructor(input) {
       this.texto = input;
-      Es6Class.contadorInstancias = (Es6Class.contadorInstancias || 0 ) +1
-     
+      Es6Class.contadorInstancias = (Es6Class.contadorInstancias || 0) + 1
     }
 
-    // static contadorInstancias
-
-    contadorPalabras(){
-      if(typeof this.texto === 'string'){
+    contadorPalabras() {
+      if (typeof this.texto === 'string') {
         return this.texto === '' ? 0 : this.texto.split(' ').length;
-      }else{
+      } else {
         return -1;
       }
     }
 
-    hayNumeros(){
-      if(typeof this.texto === 'string'){
+    hayNumeros() {
+      if (typeof this.texto === 'string') {
         const arrayLetras = this.texto.split('');
-        for(let i = 0; i<arrayLetras.length; i++){
-            if(arrayLetras[i] > '0' && arrayLetras[i] < '9'){
-              return true;
-            }
+        for (let i = 0; i < arrayLetras.length; i++) {
+          if (arrayLetras[i] >= '0' && arrayLetras[i] <= '9') {
+            return true;
+          }
         }
         return false
-      }else{
-      return -1
+      } else {
+        return -1
+      }
     }
   }
-}};
+};
 
 module.exports = {
   contarVocales,
