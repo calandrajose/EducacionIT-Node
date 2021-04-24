@@ -1,7 +1,7 @@
-import setMessage from './ej1.js'
-import randomNums from './ej2.js'
-import getInfo from './ej3.js'
-import operation from './ej4.js'
+import setMessage from './lib/ej1.js'
+import randomNums from './lib/ej2.js'
+import getInfo from './lib/ej3.js'
+import operation from './lib/ej4.js'
 import express from 'express';
 
 const app = express();
@@ -15,7 +15,8 @@ const server = app.listen(PORT, () => {
 
 app.get('/', (req, res) => {
     let message = setMessage(new Date().getHours())
-    res.send(`<h1>${message}</h1>`)
+    // res.send(`<h1>${message}</h1>`)
+    res.send(`<h1>${new Date()}</h1>`)
 })
 
 app.get('/random', (req, res) => {
